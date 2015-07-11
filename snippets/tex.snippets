@@ -16,97 +16,105 @@ snippet dmo \DeclareMathOperator
 # \begin{}...\end{}
 snippet begin \begin{} ... \end{} block
 	\begin{${1:env}}
-		${0}
+	  ${0}
 	\end{$1}
 # Tabular
 snippet tab tabular (or arbitrary) environment
 	\begin{${1:tabular}}{${2:c}}
-		${0}
+	${0}
 	\end{$1}
 snippet thm thm (or arbitrary) environment with optional argument
 	\begin[${1:author}]{${2:thm}}
-		${0}
+	${0}
 	\end{$2}
 snippet center center environment
 	\begin{center}
-		${0}
+	${0}
 	\end{center}
 # Align(ed)
 snippet ali align(ed) environment
 	\begin{align${1:ed}}
-		\label{eq:${2}}
-		${0}
+	\label{eq:${2}}
+	  ${0}
 	\end{align$1}
+# Align(ed)at
+snippet aliat align(ed)at environment
+	\begin{align${1:ed}at}[${2}]
+	\label{eq:${3}}
+	  ${0}
+	\end{align$1at}
 # Gather(ed)
 snippet gat gather(ed) environment
 	\begin{gather${1:ed}}
-		${0}
+	\label{eq:${2}}
+	  ${0}
 	\end{gather$1}
-# Equation
-snippet eq equation environment
-	\begin{equation}
-		${0}
-	\end{equation}
-# Equation
-snippet eql Labeled equation environment
-	\begin{equation}
-		\label{eq:${2}}
-	${0}
-	\end{equation}
-# Equation
-snippet eq* unnumbered equation environment
-	\begin{equation*}
-		${0}
-	\end{equation*}
-# Unnumbered Equation
-snippet \ unnumbered equation: \[ ... \]
-	\[
-		${0}
-	\]
-# Equation array
-snippet eqnarray eqnarray environment
-	\begin{eqnarray}
-		${0}
-	\end{eqnarray}
+# Multline 
+snippet multline environment
+	\begin{multline}
+	\label{eq:${1}}
+	  ${0}
+	\end{multline}
+# Unnumbered Align
+snippet ali* align* environment
+	\begin{align*}
+	  ${0}
+	\end{align*}
+# Unnumbered Alignat
+snippet aliat* alignat* environment
+	\begin{alignat*}[${1}]
+	\label{eq:${2}}
+	  ${0}
+	\end{alignat*}
+# Unnumberd Gather(ed)
+snippet gat* gather* environment
+	\begin{gather*}
+	  ${0}
+	\end{gather*}
+# Multline 
+snippet multline* environment
+	\begin{multline*}
+	  ${0}
+	\end{multline*}
 # Label
 snippet lab \label
 	\label{${1:eq:}${2:fig:}${3:tab:}${0}}
 # Enumerate
 snippet enum enumerate environment
 	\begin{enumerate}
-		\item ${0}
+	\item ${0}
 	\end{enumerate}
 # Itemize
 snippet itemize itemize environment
 	\begin{itemize}
-		\item ${0}
+	\item ${0}
 	\end{itemize}
 snippet item \item
 	\item ${1}
 # Description
 snippet desc description environment
 	\begin{description}
-		\item[${1}] ${0}
+	\item[${1}] ${0}
 	\end{description}
 # Endless new item
 snippet ]i \item (recursive)
 	\item ${1}
-		${0:]i}
+	${0:]i}
 # Matrix
 snippet mat smart matrix environment
 	\begin{${1:p/b/v/V/B/small}matrix}
-		${0}
+	${0}
 	\end{$1matrix}
 # Cases
 snippet cas cases environment
 	\begin{cases}
-		${1:equation}, &\text{ if }${2:case}\\
-		${0}
+	${1:equation}, &\text{ if }${2:case}\\
+	${0}
 	\end{cases}
 # Split
 snippet spl split environment
 	\begin{split}
-		${0}
+	${0}
 	\end{split}
 # Part
 snippet part document \part
@@ -224,7 +232,7 @@ snippet ft \footnote
 snippet fig figure environment (includegraphics)
 	\begin{figure}
 	\begin{center}
-		\includegraphics[scale=${1}]{Figures/${2}}
+	\includegraphics[scale=${1}]{Figures/${2}}
 	\end{center}
 	\caption{${3}}
 	\label{fig:${4}}
@@ -234,7 +242,7 @@ snippet tikz figure environment (tikzpicture)
 	\begin{figure}
 	\begin{center}
 	\begin{tikzpicture}[scale=${1:1}]
-		${2}
+	${2}
 	\end{tikzpicture}
 	\end{center}
 	\caption{${3}}
@@ -252,7 +260,7 @@ snippet lim \lim_{}
 	\lim_{${1:x \to +\infty}} ${0}
 snippet frame frame environment
 	\begin{frame}[${1:t}]{${2:title}}
-		${0}
+	${0}
 	\end{frame}
 snippet block block environment
 	\begin{block}{${1:title}}
@@ -268,12 +276,12 @@ snippet example exampleblock environment
 	\end{exampleblock}
 snippet col2 two-column environment
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			${1}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			${0}
-		\end{column}
+	\begin{column}{0.5\textwidth}
+	${1}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+	${0}
+	\end{column}
 	\end{columns}
 #delimiter
 snippet lr( left( right) 
@@ -290,7 +298,7 @@ snippet lra langle rangle
 # Code listings
 snippet lst
 	\begin{listing}[language=${1:language}]
-		${0}
+	${0}
 	\end{listing}
 snippet lsi
 	\lstinline|${1}| ${0}
